@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WordParsing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word Lookup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYK-zN-S9G">
+                                <rect key="frame" x="156" y="74" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter words to lookup" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="seb-RR-x1D">
+                                <rect key="frame" x="0.0" y="130" width="414" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktb-ms-gXb">
+                                <rect key="frame" x="187.5" y="190" width="39" height="30"/>
+                                <state key="normal" title="Parse"/>
+                                <connections>
+                                    <action selector="iboParseButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9S-lE-oh6"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uRW-xN-oQE">
+                                <rect key="frame" x="0.0" y="254" width="414" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NYK-zN-S9G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="0UL-Fy-VqR"/>
+                            <constraint firstItem="seb-RR-x1D" firstAttribute="top" secondItem="NYK-zN-S9G" secondAttribute="bottom" constant="35" id="LQo-px-w6k"/>
+                            <constraint firstItem="uRW-xN-oQE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mhj-sJ-iH4"/>
+                            <constraint firstItem="seb-RR-x1D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nfp-cW-wfg"/>
+                            <constraint firstItem="NYK-zN-S9G" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QKV-47-ays"/>
+                            <constraint firstItem="seb-RR-x1D" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VY3-yM-P03"/>
+                            <constraint firstItem="uRW-xN-oQE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hce-sw-iPE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uRW-xN-oQE" secondAttribute="bottom" constant="100" id="ibG-bV-Ce1"/>
+                            <constraint firstItem="ktb-ms-gXb" firstAttribute="centerX" secondItem="NYK-zN-S9G" secondAttribute="centerX" id="lWX-8I-r9n"/>
+                            <constraint firstItem="uRW-xN-oQE" firstAttribute="top" secondItem="ktb-ms-gXb" secondAttribute="bottom" constant="34" id="oqL-4r-Y8p"/>
+                            <constraint firstItem="ktb-ms-gXb" firstAttribute="top" secondItem="seb-RR-x1D" secondAttribute="bottom" constant="30" id="rk1-kr-V7F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="iboResultView" destination="uRW-xN-oQE" id="1o4-Al-ST7"/>
+                        <outlet property="iboWordInputField" destination="seb-RR-x1D" id="DBY-Lk-dqq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+    </scenes>
+</document>
